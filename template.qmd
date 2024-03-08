@@ -1,0 +1,42 @@
+---
+title: "Lab 7: Parking Garage Case Study"
+author: "Your Name"
+jupyter: julia-1.10
+date: 2024-03-08
+categories: [Lab]
+
+format: 
+    html: default
+
+    # YOU DO NOT NEED BOTH PDF AND DOCX.
+    # COMMENT OR DELETE THE ONE YOU DON'T WANT TO USE.
+    pdf:
+        documentclass: article
+        fontsize: 11pt
+        geometry:
+            - margin=1in  
+        number-sections: true
+        code-line-numbers: true
+    #docx: 
+    #    toc: true
+    #    fig-format: png
+    #    number-sections: true
+    #`    code-line-numbers: true
+
+date-format: "ddd., MMM. D"
+references: references.bib
+---
+
+
+```{julia}
+using Revise
+using ParkingGarage
+```
+
+and also regular packages
+
+```{julia}
+using Plots
+Plots.default(; margin=5Plots.mm)
+```
+
