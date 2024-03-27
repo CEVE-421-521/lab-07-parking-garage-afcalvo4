@@ -4,12 +4,21 @@
     discount_rate::F = 0.12
 end
 
-mutable struct ParkingGarageState
+"""
+Demand on opening day is for 750 spaces, and rises linearly at the rate of `demand_growth_rate` spaces/ year
+"""
+function calculate_demand(t, demand_growth_rate::AbstractFloat)
+    return 750 + demand_growth_rate * (t - 1)
+end
+
+mutable struct ParkingGarageState{T<:AbstractFloat}
     n_levels::Int
     year::Int
+    demand::T
 end
+
 function ParkingGarageState()
-    return ParkingGarageState(0, 1)
+    return ParkingGarageState(0, 1, calculate_demand(1, 80.0))
 end
 
 struct ParkingGarageAction
